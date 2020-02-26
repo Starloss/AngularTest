@@ -25,4 +25,36 @@ export class SwapiService {
   getCharacter(id) {
     return this.http.get(this.baseUrl + 'people/' + id);
   }
+
+  getPlanets(page = 1) {
+    return this.http.get(this.baseUrl + 'planets/?page=' + page);
+  }
+
+  getPlanet(id) {
+    return this.http.get(this.baseUrl + 'planets/' + id);
+  }
+
+  getSpecies(page = 1) {
+    return this.http.get(this.baseUrl + 'species/?page=' + page);
+  }
+
+  getSpecie(id) {
+    return this.http.get(this.baseUrl + 'species/' + id);
+  }
+
+  getStarships(page = 1) {
+    return this.http.get(this.baseUrl + 'starships/?page=' + page);
+  }
+
+  getStarship(id) {
+    return this.http.get(this.baseUrl + 'starship/' + id);
+  }
+
+  getVehicles(page = 1) {
+    return this.http.get(this.baseUrl + 'vehicles/?page=' + page);
+  }
+
+  getVehicle(id) {
+    return this.http.get(this.baseUrl + 'vehicle/' + id);
+  }
 }

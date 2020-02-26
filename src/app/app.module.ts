@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { VehiclesComponent } from './pages/vehicles/vehicles.component';
 import { SpeciesComponent } from './pages/species/species.component';
 import { PlanetsComponent } from './pages/planets/planets.component';
 import { ConfigurationComponent } from './pages/configuration/configuration.component';
+
+import { SwapiService } from './services/swapi.service';
 
 @NgModule({
   declarations: [
@@ -30,9 +33,10 @@ import { ConfigurationComponent } from './pages/configuration/configuration.comp
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SwapiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

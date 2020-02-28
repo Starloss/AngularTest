@@ -1,13 +1,21 @@
-<section class="ae-container-fluid ae-container-fluid--inner rk-portfolio">
-    <div *ngFor="let i of [1,1,1]" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
-        <a routerLink="/films" class="animated fadeIn rk-item ae-masonry__item">
-            <img src="assets/img/project-1.jpg" alt="">
+<section class='ae-container-fluid ae-container-fluid--inner rk-portfolio'>
+    <ul>
+        <li *ngFor="let planet of planets">
+            <h2>{{ planet.name }}</h2>
+            
+            <p>Diameter: {{ planet.diameter }}</p>
+            <p>Rotation Period: {{ planet.rotation_period }}</p>
+            <p>Orbital Period: {{ planet.orbital_period }}</p>
+            <p>Climate: {{ planet.climate }}</p>
+            <p>Gravity Level: {{ planet.gravity }}</p>
+            <p>Terrain: {{ planet.terrain }}</p>
+            <p>Population: {{ planet.population }}</p>
 
-            <div class="item-meta">
-                <h2>Essential Stationery</h2>
-                
-                <p>Branding</p>
-            </div>
-        </a>
-    </div>
+        </li>
+    </ul>
+</section>
+
+<section class='ae-container-fluid ae-container-fluid--inner rk-portfolio'>
+    <button *ngIf="prev != null" (click)="navigateBack()">Previous</button>
+    <button *ngIf="next != null" (click)="navigateForward()">Next</button>
 </section>

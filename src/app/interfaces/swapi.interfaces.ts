@@ -16,6 +16,7 @@ export interface Character {
   gender: string;
   homeworld: string;
   films: string[];
+  filmsRequested: Film[];
   species: string[];
   vehicles: string[];
   starships: string[];

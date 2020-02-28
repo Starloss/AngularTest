@@ -1,13 +1,23 @@
-<section class="ae-container-fluid ae-container-fluid--inner rk-portfolio">
-    <div *ngFor="let i of [1,1,1]" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
-        <a routerLink="/films" class="animated fadeIn rk-item ae-masonry__item">
-            <img src="assets/img/project-1.jpg" alt="">
+<section class='ae-container-fluid ae-container-fluid--inner rk-portfolio'>
+    <ul>
+        <li *ngFor="let character of characters">
+            <h2>{{ character.name }}</h2>
+            
+            <p>Gender: {{ character.gender }}</p>
+            <p>Eyes color: {{ character.eye_color }}</p>
+            <p>This character appear in a total of {{ character.films.length }} films.</p>
+            <p>Movies where this character appears: </p>
 
-            <div class="item-meta">
-                <h2>Essential Stationery</h2>
-                
-                <p>Branding</p>
-            </div>
-        </a>
-    </div>
+            <ul>
+                <li *ngFor="let film of character.filmsRequested">
+                    <a routerLink="/characters" (click)="getFilmCharacters(film)"><p>{{ film.title }}</p></a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+<section class='ae-container-fluid ae-container-fluid--inner rk-portfolio'>
+    <button *ngIf="prev != null" (click)="navigateBack()">Previous</button>
+    <button *ngIf="next != null" (click)="navigateForward()">Next</button>
 </section>

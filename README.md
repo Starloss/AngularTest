@@ -2,26 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
 
-## Development server
+1) Instalacion del Proyecto:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Primero clonamos el repositorio donde deseemos, luego utilizamos la terminal de Windows dentro del repositorio con el comando 'npm install' para instalar todos los modulos necesarios para correr el proyecto.
 
-## Code scaffolding
+2) Ejecucion del Proyecto:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ahora, con la terminal y dentro del repositorio, utilizamos el comando ng serve -o, el cual empezara a correr el proyecto y podremos usar la pagina en la direccion del localhost:4200.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Nota: Este proyecto no ha sido probado en los entornos de Linux y MacOS, cualquier error de instalacion en estos entornos queda fuera de mi alcance.

@@ -17,7 +17,7 @@ export class FilmsComponent implements OnInit {
   showingCrawl = false;
   asc = true;
   previousOrder = '';
-  numStars = 100;
+  numStars = 1000;
   title = '';
   episode: number;
   openCrawl = '';
@@ -194,15 +194,6 @@ export class FilmsComponent implements OnInit {
   openingCrawl(film: Film) {
     this.showingCrawl = true;
 
-    for (let i = 0; i < this.numStars; i++) {
-      const star = document.createElement('div');
-      star.className = 'star';
-      const xy = this.getRandomPosition();
-      star.style.top = xy[0] + 'px';
-      star.style.left = xy[1] + 'px';
-      document.body.append(star);
-    }
-
     this.title = film.title;
     this.episode = film.episode_id;
     this.openCrawl = film.opening_crawl;
@@ -210,14 +201,6 @@ export class FilmsComponent implements OnInit {
 
   dismissCover() {
     this.showingCrawl = false;
-  }
-
-  getRandomPosition() {
-    const y = window.innerWidth;
-    const x = window.innerHeight;
-    const randomX = Math.floor(Math.random() * x);
-    const randomY = Math.floor(Math.random() * y);
-    return [randomX, randomY];
   }
 
   openCharacters(film: Film) {

@@ -181,7 +181,7 @@ export class CharactersComponent implements OnInit {
     // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < character.films.length; i++) {
 
-      this.swapi.navigate( this.character.films[i] ).subscribe( (resp: Film) => {
+      this.swapi.navigate( character.films[i] ).subscribe( (resp: Film) => {
 
         FilmsRequested.push(resp);
       });

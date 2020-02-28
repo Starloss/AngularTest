@@ -18,13 +18,6 @@
     display:none;
   }
   
-  .star {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    background-color: white;
-  }
-  
   /* Set the animation, color, size and hide the text */
   .intro {
       position: absolute;

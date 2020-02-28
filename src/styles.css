@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+li {
+    text-align: center;
+}
+
+.sectionButtons {
+    text-align: center;
+}
+
+.button {
+    display:inline-block;
+    padding:0.46em 1.6em;
+    border:0.1em solid #000000;
+    margin:0 0.2em 0.2em 0;
+    border-radius:10%;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#000000;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    background-color:#FFFFFF;
+    text-align:center;
+    transition: all 0.15s;
+    height: 2.5rem;
+}
+
+button:hover{
+    text-shadow: 0 0 2em rgba(255,255,255,1);
+    color: black;
+    border-color:#FFFFFF;
+}
+
+@media all and (max-width:30em){
+    button{
+        display:block;
+        margin:0.4em auto;
+    }
+}
+
+body, .bg-black {
+    background-color: black;
+}
+
+body p, h2, a {
+    color: white;
+}
+
+.star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: white;
+    z-index: 20;
+}

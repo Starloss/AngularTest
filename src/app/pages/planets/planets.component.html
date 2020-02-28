@@ -15,7 +15,7 @@
     </ul>
 </section>
 
-<section class='ae-container-fluid ae-container-fluid--inner rk-portfolio'>
-    <button *ngIf="prev != null" (click)="navigateBack()">Previous</button>
-    <button *ngIf="next != null" (click)="navigateForward()">Next</button>
+<section class='ae-container-fluid ae-container-fluid--inner rk-portfolio sectionButtons'>
+    <button *ngIf="prev != null" (click)="navigateBack()" class='button'>Previous</button>
+    <button *ngIf="next != null" (click)="navigateForward()" class='button'>Next</button>
 </section>

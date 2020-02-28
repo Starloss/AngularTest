@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SwapiService } from 'src/app/services/swapi.service';
-import { Vehicles } from 'src/app/interfaces/swapi.interfaces';
+import { Vehicles, Vehicle } from 'src/app/interfaces/swapi.interfaces';
 
 @Component({
   selector: 'app-vehicles',
@@ -9,16 +9,40 @@ import { Vehicles } from 'src/app/interfaces/swapi.interfaces';
 })
 export class VehiclesComponent implements OnInit {
 
-  vehicles: Vehicles;
-  next = '';
-  prev = '';
+  vehicles: Vehicle[];
+  next: string = null;
+  prev: string = null;
 
   constructor( public swapi: SwapiService ) { }
 
   ngOnInit() {
-    this.swapi.getVehicles().subscribe( (resp: any) => {
-      this.vehicles = resp;
+    this.getVehicles();
+  }
+
+  navigateForward() {
+    this.swapi.navigate(this.next).subscribe( (resp: Vehicles) => {
+
+      this.vehicles = resp.results;
+      this.next = resp.next;
+      this.prev = resp.previous;
     });
   }
 
+  navigateBack() {
+    this.swapi.navigate(this.prev).subscribe( (resp: Vehicles) => {
+
+      this.vehicles = resp.results;
+      this.next = resp.next;
+      this.prev = resp.previous;
+    });
+  }
+
+  getVehicles() {
+    this.swapi.getVehicles().subscribe( (resp: Vehicles) => {
+
+      this.vehicles = resp.results;
+      this.next = resp.next;
+      this.prev = resp.previous;
+    });
+  }
 }

@@ -1,13 +1,24 @@
-<section class="ae-container-fluid ae-container-fluid--inner rk-portfolio">
-    <div *ngFor="let i of [1,1,1]" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
-        <a routerLink="/films" class="animated fadeIn rk-item ae-masonry__item">
-            <img src="assets/img/project-1.jpg" alt="">
+<section class='ae-container-fluid ae-container-fluid--inner rk-portfolio'>
+    <ul>
+        <li *ngFor="let vehicle of vehicles">
+            <h2>{{ vehicle.name }}</h2>
+            
+            <p>Model: {{ vehicle.model }}</p>
+            <p>vehicle Class: {{ vehicle.vehicle_class }}</p>
+            <p>Manufacturer: {{ vehicle.manufacturer }}</p>
+            <p>Cost in credits: {{ vehicle.cost_in_credits }}</p>
+            <p>Length: {{ vehicle.length }}</p>
+            <p>Minimum Crew: {{ vehicle.crew }}</p>
+            <p>Passengers: {{ vehicle.passengers }}</p>
+            <p>Cargo Capacity: {{ vehicle.cargo_capacity }}</p>
+            <p>Consumable: {{ vehicle.consumables }}</p>
+            <p>Max Atmosphering Speed: {{ vehicle.max_atmosphering_speed }}</p>
 
-            <div class="item-meta">
-                <h2>Essential Stationery</h2>
-                
-                <p>Branding</p>
-            </div>
-        </a>
-    </div>
+        </li>
+    </ul>
+</section>
+
+<section class='ae-container-fluid ae-container-fluid--inner rk-portfolio'>
+    <button *ngIf="prev != null" (click)="navigateBack()">Previous</button>
+    <button *ngIf="next != null" (click)="navigateForward()">Next</button>
 </section>

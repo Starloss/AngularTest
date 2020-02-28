@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Starships } from 'src/app/interfaces/swapi.interfaces';
 import { SwapiService } from 'src/app/services/swapi.service';
+import { Starships, Starship } from 'src/app/interfaces/swapi.interfaces';
 
 @Component({
   selector: 'app-starships',
@@ -9,15 +9,40 @@ import { SwapiService } from 'src/app/services/swapi.service';
 })
 export class StarshipsComponent implements OnInit {
 
-  starships: Starships;
-  next = '';
-  prev = '';
+  starships: Starship[];
+  next: string = null;
+  prev: string = null;
 
   constructor( public swapi: SwapiService ) { }
 
   ngOnInit() {
-    this.swapi.getStarships().subscribe( (resp: any) => {
-      this.starships = resp;
+    this.getStarships();
+  }
+
+  navigateForward() {
+    this.swapi.navigate(this.next).subscribe( (resp: Starships) => {
+
+      this.starships = resp.results;
+      this.next = resp.next;
+      this.prev = resp.previous;
+    });
+  }
+
+  navigateBack() {
+    this.swapi.navigate(this.prev).subscribe( (resp: Starships) => {
+
+      this.starships = resp.results;
+      this.next = resp.next;
+      this.prev = resp.previous;
+    });
+  }
+
+  getStarships() {
+    this.swapi.getStarships().subscribe( (resp: Starships) => {
+
+      this.starships = resp.results;
+      this.next = resp.next;
+      this.prev = resp.previous;
     });
   }
 

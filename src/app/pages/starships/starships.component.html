@@ -1,13 +1,26 @@
-<section class="ae-container-fluid ae-container-fluid--inner rk-portfolio">
-    <div *ngFor="let i of [1,1,1]" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
-        <a routerLink="/films" class="animated fadeIn rk-item ae-masonry__item">
-            <img src="assets/img/project-1.jpg" alt="">
+<section class='ae-container-fluid ae-container-fluid--inner rk-portfolio'>
+    <ul>
+        <li *ngFor="let starship of starships">
+            <h2>{{ starship.name }}</h2>
+            
+            <p>Model: {{ starship.model }}</p>
+            <p>Starship Class: {{ starship.starship_class }}</p>
+            <p>Manufacturer: {{ starship.manufacturer }}</p>
+            <p>Cost in credits: {{ starship.cost_in_credits }}</p>
+            <p>Length: {{ starship.length }}</p>
+            <p>Minimum Crew: {{ starship.crew }}</p>
+            <p>Passengers: {{ starship.passengers }}</p>
+            <p>Cargo Capacity: {{ starship.cargo_capacity }}</p>
+            <p>MGLT: {{ starship.MGLT }}</p>
+            <p>Hyperdrive Rating: {{ starship.hyperdrive_rating}}</p>
+            <p>Consumable: {{ starship.consumables }}</p>
+            <p>Max Atmosphering Speed: {{ starship.max_atmosphering_speed }}</p>
 
-            <div class="item-meta">
-                <h2>Essential Stationery</h2>
-                
-                <p>Branding</p>
-            </div>
-        </a>
-    </div>
+        </li>
+    </ul>
+</section>
+
+<section class='ae-container-fluid ae-container-fluid--inner rk-portfolio'>
+    <button *ngIf="prev != null" (click)="navigateBack()">Previous</button>
+    <button *ngIf="next != null" (click)="navigateForward()">Next</button>
 </section>

@@ -94,6 +94,7 @@ export interface Specie {
   eye_colors: string;
   average_lifespan: string;
   homeworld: string;
+  homeworldRequired: Planet;
   language: string;
   people: string[];
   films: string[];

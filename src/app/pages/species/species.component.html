@@ -1,13 +1,22 @@
-<section class="ae-container-fluid ae-container-fluid--inner rk-portfolio">
-    <div *ngFor="let i of [1,1,1]" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
-        <a routerLink="/films" class="animated fadeIn rk-item ae-masonry__item">
-            <img src="assets/img/project-1.jpg" alt="">
+<section class='ae-container-fluid ae-container-fluid--inner rk-portfolio'>
+    <ul>
+        <li *ngFor="let specie of species">
+            <h2>{{ specie.name }}</h2>
+            
+            <p>Classification: {{ specie.classification }}</p>
+            <p>Average Height: {{ specie.average_height }}</p>
+            <p>Skin Colors: {{ specie.skin_colors }}</p>
+            <p>Hair Colors: {{ specie.hair_colors }}</p>
+            <p>Eye Colors: {{ specie.eye_colors }}</p>
+            <p>Average Lifespan: {{ specie.average_lifespan }}</p>
+            <p>Language: {{ specie.language }}</p>
+            <p *ngIf="specie.homeworldRequired">Homeworld: {{ specie.homeworldRequired.name }}</p>
 
-            <div class="item-meta">
-                <h2>Essential Stationery</h2>
-                
-                <p>Branding</p>
-            </div>
-        </a>
-    </div>
+        </li>
+    </ul>
+</section>
+
+<section class='ae-container-fluid ae-container-fluid--inner rk-portfolio'>
+    <button *ngIf="prev != null" (click)="navigateBack()">Previous</button>
+    <button *ngIf="next != null" (click)="navigateForward()">Next</button>
 </section>
